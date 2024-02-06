@@ -1,0 +1,50 @@
+{
+  "name": "@ceski23/vite-plugin-svg-sprite",
+  "version": "0.0.1",
+  "description": "Vite plugin to create SVG sprite from icons",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "author": "Cezary Bober",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ceski23/vite-plugin-svg-sprite.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --dts --format esm,cjs",
+    "prepublish": "npm run build",
+    "prepare": "husky"
+  },
+  "peerDependencies": {
+    "vite": ">4.5.2"
+  },
+  "dependencies": {
+    "svg-sprite": "^3.0.0-beta3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^20.11.16",
+    "@types/svg-sprite": "^0.0.38",
+    "husky": "^9.0.10",
+    "semantic-release": "^23.0.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
