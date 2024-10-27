@@ -59,7 +59,7 @@ const svgSprite = async ({
 				if (this.meta.watchMode) {
 					return /* js */ `
 						export const icons = [${shapeIds.join(', ')}]
-						export default '/@svg-sprite'
+						export default '/@svg-sprite${Date.now()}'
 					`
 				}
 
@@ -80,9 +80,9 @@ const svgSprite = async ({
 			devServer = server
 
 			server.middlewares.use(async (req, res, next) => {
-				let spritePath = `${server.config.base.replace(/\/$/, '')}/@svg-sprite`
+				const spritePath = `${server.config.base.replace(/\/$/, '')}/@svg-sprite`
 
-				if (req.url === spritePath) {
+				if (req.url?.split('?').at(0) === spritePath) {
 					res.setHeader('Content-Type', 'image/svg+xml')
 
 					return res.end(outputCache.result.symbol.sprite.contents)
