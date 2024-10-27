@@ -1,6 +1,6 @@
 {
   "name": "@ceski23/vite-plugin-svg-sprite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vite plugin to create SVG sprite from icons",
   "type": "module",
   "main": "./dist/index.js",
