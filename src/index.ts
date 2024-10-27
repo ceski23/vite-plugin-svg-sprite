@@ -59,7 +59,7 @@ const svgSprite = async ({
 				if (this.meta.watchMode) {
 					return /* js */ `
 						export const icons = [${shapeIds.join(', ')}]
-						export default '/@svg-sprite${Date.now()}'
+						export default '/@svg-sprite?${Date.now()}'
 					`
 				}
 
